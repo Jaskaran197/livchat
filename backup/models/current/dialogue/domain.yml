@@ -1,0 +1,86 @@
+%YAML 1.1
+---
+actions:
+- utter_name
+- utter_thanks
+- utter_greet
+- utter_goodbye
+- action_joke
+- utter_which_room
+- utter_what_budget
+- utter_size_of_house
+- utter_details
+- utter_start
+config:
+  store_entities_as_slots: true
+entities:
+- name
+- room_type
+- budget
+- house_size
+forms: []
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- thanks:
+    use_entities: true
+- deny:
+    use_entities: true
+- joke:
+    use_entities: true
+- name:
+    use_entities: true
+- design_house:
+    use_entities: true
+- budget:
+    use_entities: true
+- room_type:
+    use_entities: true
+- house_size:
+    use_entities: true
+- advice:
+    use_entities: true
+slots:
+  budget:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  house_size:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  name:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  room_type:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_details:
+  - text: Thank you for providing your details {name}. I will be looking to design
+      your {room_type} under budget of {budget}. The house size is {house_size}.
+  utter_goodbye:
+  - text: Talk to you later!
+  utter_greet:
+  - text: Nice to you meet you {name}. How can I help?
+  utter_name:
+  - text: Hey there! Tell me your name.
+  utter_size_of_house:
+  - text: What is the size of house ?
+  - text: How much size your home ?
+  utter_start:
+  - text: How can I help you ?
+  utter_thanks:
+  - text: My pleasure.
+  utter_what_budget:
+  - text: How much is your budget ?
+  - text: What is the upper limit on budget?
+  - text: What is the maximum amount you can spend?
+  utter_which_room:
+  - text: Particularly which room do you want to designs for ?
+  - text: Which room you want to design?
+  - text: What area of your house needs to be designed ?
